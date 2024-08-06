@@ -11,6 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.shoppingappadmin.addProduct.AddProductsScreen
 import com.example.shoppingappadmin.addcategory.CategoryScreen
+import com.example.shoppingappadmin.presentation.Navigation.App
 import com.example.shoppingappadmin.ui.theme.ShoppingAppAdminTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,13 +23,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             ShoppingAppAdminTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Surface(modifier = Modifier.padding(innerPadding)) {
-                     //   CategoryScreen()
-                        AddProductsScreen()
+                     App(modifier = Modifier.padding(innerPadding))
                     }
                 }
             }
         }
     }
-}
+
 

@@ -75,7 +75,7 @@ dependencies {
 
     implementation("androidx.compose.material:material-icons-extended-android:1.6.8")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    implementation("androidx.navigation:navigation-compose:2.8.0-alpha08")
+
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 
@@ -83,5 +83,8 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.50")
 
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+
+    implementation("androidx.navigation:navigation-compose:2.8.0-beta05")
 
 }
