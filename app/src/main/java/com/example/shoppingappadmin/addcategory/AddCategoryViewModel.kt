@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
+
 @HiltViewModel
 class AddCategoryViewModel @Inject constructor(private val shoppingAppRepo: ShoppingAppRepo) : ViewModel() {
 
@@ -25,7 +26,7 @@ class AddCategoryViewModel @Inject constructor(private val shoppingAppRepo: Shop
     val categoryState: StateFlow<CategoryState> = _categoryState
 
     fun updateCategory(newCategory: String) {
-        category = category.copy(name = newCategory, createdBy = "Abhishek")
+        category = category.copy(name = newCategory, createdBy = "Shreyansh")
     }
 
     fun addCategory() {
@@ -33,17 +34,17 @@ class AddCategoryViewModel @Inject constructor(private val shoppingAppRepo: Shop
             shoppingAppRepo.addCategory(category = category).collect {
                 when (it) {
                     is ResultState.Success -> {
-                        _categoryState.value = CategoryState(data = it.data)
+                        _categoryState.value = CategoryState(data = it.data, isSuccess = true)
                         category = CategoryModel()
                     }
 
                     is ResultState.Error -> {
-                        _categoryState.value = CategoryState(error = it.message)
+                        _categoryState.value = CategoryState(error = it.message, isSuccess = false)
                         category = CategoryModel()
                     }
 
                     is ResultState.Loading -> {
-                        _categoryState.value = CategoryState(isLoading = true)
+                        _categoryState.value = CategoryState(isLoading = true, isSuccess = false)
                         category = CategoryModel()
                     }
                 }
@@ -57,5 +58,6 @@ class AddCategoryViewModel @Inject constructor(private val shoppingAppRepo: Shop
 data class CategoryState(
     val data: String = "",
     val isLoading: Boolean = false,
-    val error: String = ""
+    val error: String = "",
+    val isSuccess: Boolean = false
 )

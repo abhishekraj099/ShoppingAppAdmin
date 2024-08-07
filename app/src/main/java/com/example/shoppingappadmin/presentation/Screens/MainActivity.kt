@@ -7,10 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.shoppingappadmin.addProduct.AddProductsScreen
-import com.example.shoppingappadmin.addcategory.CategoryScreen
 import com.example.shoppingappadmin.presentation.Navigation.App
 import com.example.shoppingappadmin.ui.theme.ShoppingAppAdminTheme
 import dagger.hilt.android.AndroidEntryPoint
