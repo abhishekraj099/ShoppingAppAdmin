@@ -32,7 +32,8 @@ class AddCategoryViewModel @Inject constructor(private val shoppingAppRepo: Shop
     val uploadState: StateFlow<UploadState> = _uploadState
 
     fun updateCategory(newCategory: String, brandName: String) {
-        category = category.copy(name = newCategory, createdBy = "Shreyansh", brandName = brandName)
+        category = category.copy(name = newCategory, createdBy = "Abhishek" +
+                "", brandName = brandName)
     }
 
     fun updateBannerPhotoUrl(bannerUrl: String) {
